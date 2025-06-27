@@ -1,6 +1,6 @@
 [package]
-name = "rust-workspace-bin"
-description = ""
+name = "shelle-macros"
+description = "Proc macros for shelle"
 authors.workspace = true
 version.workspace = true
 edition.workspace = true
@@ -10,10 +10,12 @@ readme.workspace = true
 keywords.workspace = true
 categories.workspace = true
 
-[dependencies]
-rust-workspace-lib.workspace = true
+[lib]
+proc-macro = true
 
-argh.workspace = true
-anyhow.workspace = true
-log.workspace = true
-env_logger.workspace = true
+
+[dependencies]
+syn.workspace = true
+quote.workspace = true
+proc-macro2.workspace = true
+proc-macro-error2.workspace = true

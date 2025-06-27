@@ -1,6 +1,6 @@
 [package]
-name = "rust-workspace-lib"
-description = ""
+name = "shelle"
+description = "Macros for writing shell scripts in Rust."
 authors.workspace = true
 version.workspace = true
 edition.workspace = true
@@ -12,8 +12,8 @@ categories.workspace = true
 
 
 [dependencies]
+shelle-macros = { version = "0.1.0", path = "../shelle-macros" }
 thiserror.workspace = true
-log.workspace = true
 
 
 [lints.clippy]

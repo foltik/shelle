@@ -1,0 +1,11 @@
+[package]
+name = "shelle-examples"
+edition.workspace = true
+
+[[example]]
+name = "ls"
+path = "ls.rs"
+
+[dependencies]
+shelle = { version = "*", path = "../crates/shelle" }
+anyhow.workspace = true
