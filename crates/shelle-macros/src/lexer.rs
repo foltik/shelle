@@ -21,7 +21,7 @@ pub fn scan_str_lit(lit: &Literal) -> TokenStream {
         if !last_part.is_empty() {
             let lit_str = format!("\"{}\"", last_part.to_str().unwrap());
             let l = syn::parse_str::<Literal>(&lit_str).unwrap();
-            output.extend(quote!(.append(#l)));
+            output.extend(quote!(.push(#l)));
             last_part.clear();
         }
     }
@@ -223,7 +223,7 @@ impl Lexer {
         if s.starts_with('\"') || s.starts_with('r') {
             // string literal
             let ss = scan_str_lit(&lit);
-            self.extend_last_arg(quote!(#ss.into_os_string()));
+            self.extend_last_arg(quote!(#ss));
         } else {
             let mut is_redirect = false;
             if s == "1" || s == "2" {

@@ -12,6 +12,12 @@ impl Arg {
     }
 }
 
+impl AsRef<OsStr> for Arg {
+    fn as_ref(&self) -> &OsStr {
+        &self.string
+    }
+}
+
 impl From<Arg> for OsString {
     fn from(builder: Arg) -> Self {
         builder.string
