@@ -96,7 +96,7 @@ impl Cmd {
 
     pub fn run(self, cwd: &Path) -> io::Result<process::Child> {
         let mut cmd = self.build(cwd)?;
-        Ok(cmd.spawn()?)
+        cmd.spawn()
     }
 
     pub fn run_capture(mut self, cwd: &Path) -> io::Result<process::Child> {

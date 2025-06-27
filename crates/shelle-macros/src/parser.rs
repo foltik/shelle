@@ -63,7 +63,7 @@ impl<I: Iterator<Item = ParseArg>> Parser<I> {
                         match (fd1, fd2) {
                             (1, 2) => ret.extend(quote!(.stdout(::shelle::Stdout::ToStderr))),
                             (2, 1) => ret.extend(quote!(.stderr(::shelle::Stderr::ToStdout))),
-                            _ => panic!("unsupported fd numbers: {} {}", fd1, fd2),
+                            _ => panic!("unsupported fd numbers: {fd1} {fd2}"),
                         }
                     }
                 }
@@ -75,7 +75,7 @@ impl<I: Iterator<Item = ParseArg>> Parser<I> {
                     2 => ret.extend(
                         quote!(.stdin(::shelle::Stderr::ToFile { path: #file.into(), append: #append })),
                     ),
-                    _ => panic!("unsupported fd ({}) redirect to file {}", fd1, file),
+                    _ => panic!("unsupported fd ({fd1}) redirect to file {file}"),
                 },
                 ParseArg::ArgStr(opt) => {
                     ret.extend(quote!(.arg(#opt)));
