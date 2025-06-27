@@ -12,7 +12,7 @@ categories.workspace = true
 
 
 [dependencies]
-shelle-macros = { version = "0.1.0", path = "../shelle-macros" }
+shelle-macros.workspace = true
 thiserror.workspace = true
 
 
