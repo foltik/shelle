@@ -11,7 +11,8 @@ keywords.workspace = true
 categories.workspace = true
 
 [dependencies]
-rust-workspace-lib = { path = "../lib", version = "0.1.0" }
+rust-workspace-lib.workspace = true
+
 argh.workspace = true
 anyhow.workspace = true
 log.workspace = true
